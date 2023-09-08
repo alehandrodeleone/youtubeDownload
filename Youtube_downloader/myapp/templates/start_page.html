@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en">
+{%load static %}
+<head>
+<link rel='stylesheet' href="{% static 'css/start_page2.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+</head>
+
+<body>
+
+  <button class="btn2" onclick="api()">
+    API
+  </button>
+
+  <script>
+    function api() {
+
+      var otherViewUrl = "{% url 'api_page' %}";
+  
+      // Выполняем переход на указанный URL
+      window.location.href = otherViewUrl;
+    }
+  </script>
+<form method="POST" action="{% url 'download_video' %}">
+  {% csrf_token %}
+
+  <div class="button_container">
+    <p class="description">Download video from youtube</p>
+    <p>  <input class="input" type="text" id="video_url" name="video_url"><br><br></p>
+    <button type="submit" value="Скачать" class="btn"><span>Download</span></button>
+
+  </div>
+</form>
+</body>
+
+</html>

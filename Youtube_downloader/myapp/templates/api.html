@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="en">
+{%load static %}
+<head>
+<link rel='stylesheet' href="{% static 'css/start_page2.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+</head>
+
+<body>
+
+  <button class="btn2" onclick="api()">
+    API
+  </button>
+
+  <script>
+    function api() {
+
+      var otherViewUrl = "{% url 'download_video' %}";
+  
+      // Выполняем переход на указанный URL
+      window.location.href = otherViewUrl;
+    }
+  </script>
+<h1 class="get">
+    <p class="get_label">GET Запросы(прописаны в requests.http)<p>
+        <p class="get_info">Для получения информации о всех записях в базе данных
+             в запросе используйте префикс <u>list_api</u></p>
+        <p class="get_info">Пример:</p>
+        <p class="get_info">GET  http://127.0.0.1:8000/list_api</p>
+        <p class="get_info">Content-Type: application/json</p>
+</h1>
+<h1 class="get2">
+    <p class="get_label">GET Запросы(поиск по id)<p>
+        <p class="get_info">Для получения информации о <u>конкретных</u> записях в базе данных
+            в запросе используйте префикс <u>list_api/id/</u></p>
+       <p class="get_info">Пример:</p>
+       <p class="get_info">GET  http://127.0.0.1:8000/list_api/2/</p>
+       <p class="get_info">Content-Type: application/json</p>
+</h1>
+<h1 class="CRUD">
+<p class="CRUD_label">CRUD Запросы<p>
+    <p class="CRUD_info">Для использования CRUD запросов используйте префикс <u>api_edit</u></p>
+    <p class="CRUD_info">Внимание! Требуется токен</p>
+   <p class="CRUD_info">Пример:</p>
+   <p class="CRUD_info">POST  http://127.0.0.1:8000/api_edit/</p>
+   <p class="CRUD_info">Authorization: Token 9249d910c1fba165014b9ac763116fa8c7e9cd3a</p>
+   <p class="CRUD_info">Content-Type: application/json</p>
+</h1>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+GET  http://127.0.0.1:8000/list_api
+Content-Type: application/json
+Authorization: Token 9249d910c1fba165014b9ac763116fa8c7e9cd3a
+
+
+###
+DELETE http://127.0.0.1:8000/api_edit/5/
+Authorization: Token 9249d910c1fba165014b9ac763116fa8c7e9cd3a
+Content-Type: application/json
+
+###
+POST  http://127.0.0.1:8000/api_edit/
+Authorization: Token 9249d910c1fba165014b9ac763116fa8c7e9cd3a
+Content-Type: application/json
+
+{   
+    "Links": "https://www.youtube.com/watch?v=Aibxit_PpAg&list=RDEMqh_zOFTx7czxQm1Khs962A&start_radio=1&rv=BLiAN9nl3zQ",
+    "datetime": "2023-09-08T10:56:31.041768Z"
+}   
